@@ -345,5 +345,16 @@ def add_to_watchlist(movie_id):
     # Nach dem Hinzufügen leiten wir den User direkt zur Watchlist-Seite
     return redirect("/watchlist")
 
+@app.route("/all_movies")
+def all_movies():
+    if not require_login():
+        return redirect("/login")
+    
+    # Wir holen alle Filme (du kannst hier auch deine search_movies Funktion 
+    # mit einem leeren String nutzen, falls sie das unterstützt)
+    all_movies_list = db.search_movies("") 
+    
+    return render_template("all_movies.html", movies=all_movies_list, user=session["user"])
+
 if __name__ == "__main__":
     app.run(debug=True)
