@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="page-title">Film bewerten</h2>
+
+<form method="POST" class="form-container">
+    <input list="titles" name="title" placeholder="Filmtitel" required>
+    <datalist id="titles">
+        {% for t in all_titles %}
+        <option value="{{ t }}">
+        {% endfor %}
+    </datalist>
+
+    <input type="number" step="0.1" min="0" max="5" name="rating" placeholder="Bewertung (0-5)" required>
+
+    <button type="submit">Speichern</button>
+</form>
+
+{% if message %}
+<p class="info">{{ message }}</p>
+{% endif %}
+
+{% if description %}
+<div class="description-box">
+    <h3>Beschreibung:</h3>
+    <p>{{ description }}</p>
+</div>
+{% endif %}
+
+{% endblock %}
