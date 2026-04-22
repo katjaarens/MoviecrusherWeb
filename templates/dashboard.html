@@ -10,4 +10,11 @@
     <li>Gesuchte Filme: {{ stats.searches }}</li>
 </ul>
 
+<div class="stats-container">
+    <p>Filme in der Datenbank: {{ stats.total_movies }}</p>
+    
+    <a href="{{ url_for('all_movies') }}" class="btn btn-success" style="margin-top: 10px; display: inline-block; padding: 10px 20px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px;">
+        Alle Filme anzeigen
+    </a>
+</div>
 {% endblock %}

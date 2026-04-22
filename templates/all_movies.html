@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alle Filme</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/dashboard">Dashboard</a> | <a href="/search">Suche</a> | <a href="/logout">Logout</a>
+    </nav>
+
+    <h1>Komplette Filmliste</h1>
+    
+    <div class="movie-list">
+        {% for movie in movies %}
+            <div style="border-bottom: 1px solid #ccc; padding: 10px;">
+                <strong>{{ movie[1] }}</strong> ({{ movie[3] }}) - <em>{{ movie[2] }}</em>
+                <a href="{{ url_for('add_to_watchlist', movie_id=movie[0]) }}" 
+                   style="margin-left: 20px; color: blue;">+ Watchlist</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
