@@ -9,11 +9,11 @@ body {
 
 /* --- Navigation --- */
 nav {
-    background-color: #111;
+    background-color: #9f29ee;
     padding: 15px 30px;
     display: flex;
     gap: 20px;
-    border-bottom: 2px solid #e50914; /* Kino-Rot */
+    border-bottom: 2px solid #080808; /* Kino-Rot */
     justify-content: center;
 }
 
@@ -25,7 +25,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #e50914;
+    color: #cc06d3;
 }
 
 /* --- Content Box (für Login, Register, Dashboard) --- */
@@ -41,7 +41,7 @@ nav a:hover {
 /* --- Überschriften --- */
 h2, h1 {
     margin-top: 0;
-    color: #e50914;
+    color: #d40ac4;
 }
 
 /* --- Film-Grid (Neu für all_movies.html) --- */
@@ -83,7 +83,7 @@ input, textarea, select {
 
 button, .btn-watchlist {
     padding: 12px;
-    background: #e50914;
+    background: #c908b9;
     color: white;
     border: none;
     border-radius: 6px;
@@ -96,7 +96,7 @@ button, .btn-watchlist {
 }
 
 button:hover, .btn-watchlist:hover {
-    background: #b20710;
+    background: #6e0588;
 }
 
 /* --- Meldungen --- */
