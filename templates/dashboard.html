@@ -1,30 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
+<h2>Willkommen, {{ user.name }}!</h2>
 
-<h2 class="page-title">Willkommen, {{ user.name }}</h2>
+<h3>Deine Statistiken</h3>
 
-<div class="stats-container">
-
-    <div class="stat-card">
-        <h3>Gesamtfilme</h3>
-        <p>{{ stats.total_movies }}</p>
-    </div>
-
-    <div class="stat-card">
-        <h3>Deine Bewertungen</h3>
-        <p>{{ stats.user_ratings }}</p>
-    </div>
-
-    <div class="stat-card">
-        <h3>Watchlist</h3>
-        <p>{{ stats.watchlist_size }}</p>
-    </div>
-
-    <div class="stat-card">
-        <h3>Ø Bewertung</h3>
-        <p>{{ stats.avg_rating }}</p>
-    </div>
-
-</div>
+<ul>
+    <li>Bewertungen: {{ stats.ratings }}</li>
+    <li>Watchlist-Einträge: {{ stats.watchlist }}</li>
+    <li>Gesuchte Filme: {{ stats.searches }}</li>
+</ul>
 
 {% endblock %}

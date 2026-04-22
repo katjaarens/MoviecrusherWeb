@@ -1,18 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h2 class="page-title">Deine Watchlist</h2>
+<h2>Deine Watchlist</h2>
 
 {% if watchlist %}
-<div class="results-box">
+<ul>
     {% for movie in watchlist %}
-        <div class="movie-item">
-            <strong>{{ movie[1] }}</strong> ({{ movie[3] }}) – {{ movie[2] }}
-        </div>
+        <li>{{ movie[1] }}</li>
     {% endfor %}
-</div>
+</ul>
 {% else %}
-<p class="info">Deine Watchlist ist leer.</p>
+<p>Keine Filme in der Watchlist.</p>
 {% endif %}
 
 {% endblock %}
+

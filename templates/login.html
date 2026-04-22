@@ -1,20 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
+<h2>Login</h2>
 
-<div class="form-container">
-    <h2>Login</h2>
+<form method="POST">
+    <label>E-Mail:</label>
+    <input type="email" name="email" required>
 
-    {% if error %}
-        <p class="error">{{ error }}</p>
-    {% endif %}
+    <button type="submit">Login</button>
+</form>
 
-    <form method="POST">
-        <input type="email" name="email" placeholder="E-Mail" required>
-        <button type="submit">Anmelden</button>
-    </form>
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
 
-    <p>Noch keinen Account?</p>
-    <a href="/register" class="link">Jetzt registrieren</a>
-</div>
-
+<p>Noch keinen Account? <a href="/register">Registrieren</a></p>
 {% endblock %}
+

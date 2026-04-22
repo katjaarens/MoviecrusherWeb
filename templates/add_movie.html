@@ -1,19 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
+<h2>Film hinzufügen</h2>
 
-<h2 class="page-title">Film hinzufügen</h2>
+<form method="POST">
+    <label>Titel:</label>
+    <input type="text" name="title" required>
 
-<form method="POST" class="form-container">
-    <input type="text" name="title" placeholder="Titel" required>
-    <input type="text" name="genre" placeholder="Genre" required>
-    <input type="number" name="year" placeholder="Erscheinungsjahr" required>
-    <textarea name="description" placeholder="Beschreibung (optional)" rows="5"></textarea>
+    <label>Genre:</label>
+    <input type="text" name="genre" required>
 
-    <button type="submit">Hinzufügen</button>
+    <label>Jahr:</label>
+    <input type="number" name="year" required>
+
+    <label>Beschreibung:</label>
+    <textarea name="description"></textarea>
+
+    <button type="submit">Film speichern</button>
 </form>
 
 {% if message %}
-<p class="info">{{ message }}</p>
+<p>{{ message }}</p>
 {% endif %}
 
 {% endblock %}

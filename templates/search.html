@@ -1,34 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
+<h2>Filmsuche</h2>
 
-<h2 class="page-title">Filme suchen</h2>
-
-<form method="POST" class="form-container">
-    <input type="text" name="keyword" placeholder="Suchbegriff (Titel oder Genre)">
+<form method="POST">
+    <label>Suchbegriff:</label>
+    <input type="text" name="keyword" required>
     <button type="submit">Suchen</button>
 </form>
 
 {% if message %}
-<p class="error">{{ message }}</p>
+<p>{{ message }}</p>
 {% endif %}
 
 {% if results %}
-<div class="results-box">
-    <h3>Suchergebnisse:</h3>
-
+<h3>Gefundene Filme:</h3>
+<ul>
     {% for movie in results %}
-        <div class="movie-item">
-            <strong>{{ movie[1] }}</strong> ({{ movie[3] }}) – {{ movie[2] }}
-        </div>
+        <li>{{ movie[1] }}</li>
     {% endfor %}
-</div>
+</ul>
 {% endif %}
 
 {% if description %}
-<div class="description-box">
-    <h3>Beschreibung:</h3>
-    <p>{{ description }}</p>
-</div>
+<h3>Beschreibung:</h3>
+<p>{{ description }}</p>
 {% endif %}
 
 {% endblock %}
+
