@@ -5,27 +5,22 @@
     <title>{{ title if title else "MovieCrusher" }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
 
-    <div class="navbar">
-        <h1>🎬 MovieCrusher</h1>
+<nav>
+    {% if session.get("user") %}
+        <a href="/dashboard">Dashboard</a>
+        <a href="/search">Suche</a>
+        <a href="/rate">Bewerten</a>
+        <a href="/watchlist">Watchlist</a>
+        <a href="/add_movie">Film hinzufügen</a>
+        <a href="/logout">Logout</a>
+    {% endif %}
+</nav>
 
-        {% if session.get("user") %}
-        <div class="nav-links">
-            <a href="/dashboard">Dashboard</a>
-            <a href="/search">Suche</a>
-            <a href="/rate">Bewerten</a>
-            <a href="/watchlist">Watchlist</a>
-            <a href="/add_movie">Film hinzufügen</a>
-            <a href="/logout" class="logout">Logout</a>
-        </div>
-        {% endif %}
-    </div>
-
-    <div class="content">
-        {% block content %}{% endblock %}
-    </div>
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
 
 </body>
 </html>
