@@ -1,89 +1,39 @@
-/* --- Grundlayout (Dark Mode) --- */
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #1a1a1a; /* Dunkler Hintergrund */
-    margin: 0;
-    padding: 0;
-    color: #f4f4f4; /* Helle Schrift */
-}
-
 /* --- Navigation --- */
 nav {
     background-color: #111;
     padding: 15px 30px;
     display: flex;
     gap: 20px;
-    border-bottom: 2px solid #e50914; /* Kino-Rot */
+    border-bottom: 2px solid #007bff; /* Jetzt Blau statt Rot */
     justify-content: center;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
 nav a:hover {
-    color: #e50914;
-}
-
-/* --- Content Box (für Login, Register, Dashboard) --- */
-.content {
-    max-width: 700px;
-    margin: 40px auto;
-    background: #262626; /* Dunklere Box */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    color: #007bff; /* Hover-Effekt in Blau */
 }
 
 /* --- Überschriften --- */
 h2, h1 {
     margin-top: 0;
-    color: #e50914;
+    color: #007bff; /* Titel jetzt in Blau */
 }
 
-/* --- Film-Grid (Neu für all_movies.html) --- */
-.movie-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 30px;
-}
-
-.movie-card {
-    background-color: #333;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
+/* --- Die Film-Karten --- */
+.movie-card h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #007bff; /* Filmtitel in Blau */
 }
 
 .movie-card:hover {
     transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4); /* Blauer Schatten beim Hover */
 }
 
-/* --- Formulare (angepasst an Dark Mode) --- */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-input, textarea, select {
-    padding: 10px;
-    background: #444;
-    border: 1px solid #555;
-    border-radius: 6px;
-    font-size: 15px;
-    color: white;
-}
-
+/* --- Buttons --- */
 button, .btn-watchlist {
     padding: 12px;
-    background: #e50914;
+    background: #007bff; /* Button Hintergrund Blau */
     color: white;
     border: none;
     border-radius: 6px;
@@ -96,9 +46,5 @@ button, .btn-watchlist {
 }
 
 button:hover, .btn-watchlist:hover {
-    background: #b20710;
+    background: #0056b3; /* Dunkleres Blau beim Drüberfahren */
 }
-
-/* --- Meldungen --- */
-p.error { color: #ff4d4d; font-weight: bold; }
-p.success { color: #44ff44; font-weight: bold; }
