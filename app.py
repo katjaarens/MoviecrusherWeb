@@ -333,6 +333,17 @@ def add_movie():
 
     return render_template("add_movie.html", message=message)
 
+@app.route("/add_to_watchlist/<int:movie_id>")
+def add_to_watchlist(movie_id):
+    if not require_login():
+        return redirect("/login")
+
+    user = session["user"]
+    # Wir nutzen die Methode, die du schon in deiner database.py hast!
+    db.add_to_watchlist(user["id"], movie_id)
+    
+    # Nach dem Hinzufügen leiten wir den User direkt zur Watchlist-Seite
+    return redirect("/watchlist")
 
 if __name__ == "__main__":
     app.run(debug=True)
