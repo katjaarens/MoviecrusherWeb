@@ -27,11 +27,21 @@
 {% endif %}
 
 {% for movie in results %}
-    <div class="movie-item">
-        <strong>{{ movie[1] }}</strong> ({{ movie[3] }})
+    <div style="margin-bottom: 15px; padding: 10px; border-bottom: 1px solid #ddd;">
+        <strong>{{ movie[1] }}</strong> ({{ movie[3] }}) 
         
         <a href="{{ url_for('add_to_watchlist', movie_id=movie[0]) }}" 
-           class="btn-add">
+           style="
+            display: inline-block;
+            margin-left: 10px;
+            padding: 5px 12px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+           ">
            + Watchlist
         </a>
     </div>
