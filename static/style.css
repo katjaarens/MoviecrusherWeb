@@ -1,50 +1,91 @@
+/* --- Grundlayout --- */
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
 /* --- Navigation --- */
 nav {
-    background-color: #111;
-    padding: 15px 30px;
-    display: flex;
+: flex;
     gap: 20px;
-    border-bottom: 2px solid #007bff; /* Jetzt Blau statt Rot */
-    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 nav a:hover {
-    color: #007bff; /* Hover-Effekt in Blau */
+    text-decoration: underline;
+}
+
+/* --- Content Box --- */
+.content {
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 /* --- Überschriften --- */
-h2, h1 {
+h2 {
     margin-top: 0;
-    color: #007bff; /* Titel jetzt in Blau */
+    color: #4a90e2;
 }
 
-/* --- Die Film-Karten --- */
-.movie-card h3 {
-    margin: 10px 0;
-    font-size: 1.2rem;
-    color: #007bff; /* Filmtitel in Blau */
+/* --- Formulare --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.movie-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4); /* Blauer Schatten beim Hover */
+input, textarea, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
 }
 
-/* --- Buttons --- */
-button, .btn-watchlist {
+button {
     padding: 12px;
-    background: #007bff; /* Button Hintergrund Blau */
+    background: #4a90e2;
     color: white;
     border: none;
     border-radius: 6px;
     font-size: 16px;
-    font-weight: bold;
     cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: background 0.3s;
 }
 
-button:hover, .btn-watchlist:hover {
-    background: #0056b3; /* Dunkleres Blau beim Drüberfahren */
+button:hover {
+    background: #3a78c2;
+}
+
+/* --- Listen --- */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* --- Fehlermeldungen --- */
+p.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* --- Erfolgsmeldungen --- */
+p.success {
+    color: green;
+    font-weight: bold;    background: #4a90e2;
+    padding: 12px;
+    display
 }
