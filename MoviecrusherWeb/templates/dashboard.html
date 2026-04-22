@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="page-title">Willkommen, {{ user.name }}</h2>
+
+<div class="stats-container">
+
+    <div class="stat-card">
+        <h3>Gesamtfilme</h3>
+        <p>{{ stats.total_movies }}</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Deine Bewertungen</h3>
+        <p>{{ stats.user_ratings }}</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Watchlist</h3>
+        <p>{{ stats.watchlist_size }}</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Ø Bewertung</h3>
+        <p>{{ stats.avg_rating }}</p>
+    </div>
+
+</div>
+
+{% endblock %}

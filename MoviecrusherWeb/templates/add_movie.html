@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="page-title">Film hinzufügen</h2>
+
+<form method="POST" class="form-container">
+    <input type="text" name="title" placeholder="Titel" required>
+    <input type="text" name="genre" placeholder="Genre" required>
+    <input type="number" name="year" placeholder="Erscheinungsjahr" required>
+    <textarea name="description" placeholder="Beschreibung (optional)" rows="5"></textarea>
+
+    <button type="submit">Hinzufügen</button>
+</form>
+
+{% if message %}
+<p class="info">{{ message }}</p>
+{% endif %}
+
+{% endblock %}
